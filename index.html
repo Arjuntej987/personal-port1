@@ -1,141 +1,1361 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💻</text></svg>">
-<title>Mittireddi Teja | Frontend Web Developer</title>
-<meta name="description" content="Portfolio of Mittireddi Teja, a frontend-focused web developer building responsive websites with HTML, CSS and JavaScript.">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Mittireddi Teja | Frontend Web Developer &amp; UI Engineer</title>
+  <meta name="description"
+    content="Portfolio of Mittireddi Teja, a frontend web developer and UI engineer specializing in high-performance, responsive web applications with HTML5, modern CSS, JavaScript, and React.">
+  <meta name="keywords"
+    content="Mittireddi Teja, Frontend Developer, Web Developer, React Developer, JavaScript, UI/UX Designer, Responsive Web Design, Portfolio, Vizianagaram">
+  <meta name="author" content="Mittireddi Teja">
+  <meta name="robots" content="index, follow">
+  <meta name="theme-color" content="#090a10">
+  <link rel="canonical" href="https://mittiredditeja.dev">
+
+  <!-- Open Graph / Facebook / LinkedIn Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="Mittireddi Teja Portfolio">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:title" content="Mittireddi Teja | Frontend Web Developer &amp; UI Engineer">
+  <meta property="og:description"
+    content="Crafting high-performance, pixel-perfect, and responsive digital experiences with modern web technologies.">
+  <meta property="og:image" content="assets/avatar.jpg">
+  <meta property="og:url" content="https://mittiredditeja.dev">
+
+  <!-- Twitter Meta -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Mittireddi Teja | Frontend Web Developer &amp; UI Engineer">
+  <meta name="twitter:description"
+    content="Crafting high-performance, pixel-perfect, and responsive digital experiences with modern web technologies.">
+  <meta name="twitter:image" content="assets/avatar.jpg">
+
+  <!-- Structured Data JSON-LD for Search Engines -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Person",
+        "@id": "https://mittiredditeja.dev/#person",
+        "name": "Mittireddi Teja",
+        "jobTitle": "Frontend Web Developer & UI Engineer",
+        "url": "https://mittiredditeja.dev",
+        "image": "assets/avatar.jpg",
+        "sameAs": [
+          "https://github.com/Arjuntej987",
+          "https://www.linkedin.com/in/mittiredditeja"
+        ],
+        "address": {
+          "@type": "PostalAddress",
+          "addressLocality": "Vizianagaram",
+          "addressRegion": "Andhra Pradesh",
+          "addressCountry": "India"
+        },
+        "alumniOf": {
+          "@type": "CollegeOrUniversity",
+          "name": "Lendi Institute of Engineering and Technology"
+        },
+        "knowsAbout": ["HTML5", "CSS3", "JavaScript (ES6+)", "React.js", "Responsive Web Design", "UI Engineering", "Core Web Vitals"]
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://mittiredditeja.dev/#website",
+        "url": "https://mittiredditeja.dev",
+        "name": "Mittireddi Teja Portfolio",
+        "description": "Portfolio of Mittireddi Teja, Frontend Developer and UI Engineer.",
+        "publisher": {
+          "@id": "https://mittiredditeja.dev/#person"
+        }
+      }
+    ]
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon"
+    href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>⚡</text></svg>">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
+
+  <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
 
-<header>
-  <nav>
-    <a class="logo" href="#home">Teja<span style="color:var(--accent)">.dev</span></a>
-    <div class="links">
-      <a href="#about">About</a><a href="#skills">Skills</a><a href="#experience">Experience</a>
-      <a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
-      <button id="theme" aria-label="Toggle theme">🌙</button>
+  <!-- Ambient Interactive Canvas & Background Glow Orbs -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="glow-orb orb-1" aria-hidden="true"></div>
+  <div class="glow-orb orb-2" aria-hidden="true"></div>
+  <div class="glow-orb orb-3" aria-hidden="true"></div>
+
+  <!-- Header / Navigation -->
+  <header class="glass-header" id="navbar">
+    <div class="nav-container">
+      <a href="#home" class="logo-brand" aria-label="Mittireddi Teja Home">
+        <span class="logo-avatar">
+          <img src="assets/avatar.jpg" alt="Teja Avatar" width="36" height="36" loading="eager">
+        </span>
+        <span class="logo-text">Teja<span class="logo-accent">.dev</span></span>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-menu" id="nav-menu">
+        <a href="#home" class="nav-link active">Home</a>
+        <a href="#about" class="nav-link">About</a>
+        <a href="#skills" class="nav-link">Skills</a>
+        <a href="#projects" class="nav-link">Projects</a>
+        <a href="#experience" class="nav-link">Experience</a>
+        <a href="#education" class="nav-link">Education</a>
+        <a href="#contact" class="nav-link">Contact</a>
+      </nav>
+
+
+      <!-- Nav Actions (Theme Toggle & Mobile Menu) -->
+      <div class="nav-actions">
+        <!-- Theme Toggle -->
+        <button id="theme-toggle" class="icon-btn" aria-label="Toggle light/dark theme" title="Toggle theme">
+          <svg class="sun-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <circle cx="12" cy="12" r="5"></circle>
+            <line x1="12" y1="1" x2="12" y2="3"></line>
+            <line x1="12" y1="21" x2="12" y2="23"></line>
+            <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+            <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+            <line x1="1" y1="12" x2="3" y2="12"></line>
+            <line x1="21" y1="12" x2="23" y2="12"></line>
+            <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+            <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+          </svg>
+          <svg class="moon-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor"
+            stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+          </svg>
+        </button>
+
+        <!-- Mobile Menu Toggle Button -->
+        <button id="menu-btn" class="menu-btn" aria-label="Open mobile menu" aria-expanded="false">
+          <span class="bar bar-1"></span>
+          <span class="bar bar-2"></span>
+          <span class="bar bar-3"></span>
+        </button>
+      </div>
     </div>
-    <button id="menu" aria-label="Open menu">☰</button>
-  </nav>
-</header>
+  </header>
 
-<section id="home">
-  <p class="hi">Hello, I'm</p>
-  <h1>Mittireddi Teja</h1>
-  <p class="role">I am a <span id="typing"></span>|</p>
-  <p class="summary">Frontend-focused web developer building responsive websites with HTML, CSS and JavaScript, using AI-assisted workflows to build fast, modern web apps.</p>
-  <div class="btns">
-    <a class="btn fill" href="#projects">View Projects</a>
-    <a class="btn line" href="#contact">Contact Me</a>
-    <a class="btn line" href="https://github.com/Arjuntej987" target="_blank" rel="noopener">GitHub</a>
-    <a class="btn line" href="https://www.linkedin.com/in/mittiredditeja" target="_blank" rel="noopener">LinkedIn</a>
-  </div>
-</section>
-
-<section id="about" class="reveal">
-  <h2>About Me</h2>
-  <div class="card">
-    <p>I'm a frontend-focused web developer from Vizianagaram, Andhra Pradesh. I build responsive business websites with HTML, CSS and JavaScript, and I care about clean UI, performance optimization and secure authentication concepts. I'm passionate about practical learning and real-world project development.</p>
-  </div>
-  <h3 style="margin:26px 0 12px">Soft Skills</h3>
-  <div class="chips">
-    <span class="chip">Problem-Solving</span><span class="chip">Tech Adaptability</span>
-    <span class="chip">Client Communication</span><span class="chip">Feedback Handling</span>
-    <span class="chip">Time Management</span><span class="chip">Quick Learner</span>
-  </div>
-</section>
-
-<section id="skills" class="reveal">
-  <h2>Technical Skills</h2>
-  <div class="grid">
-    <div class="card"><h3>💻 Frontend</h3><div class="chips"><span class="chip">HTML5</span><span class="chip">CSS3</span><span class="chip">JavaScript ES6+</span><span class="chip">React</span><span class="chip">Responsive Design</span></div></div>
-    <div class="card"><h3>🤖 AI Tools</h3><div class="chips"><span class="chip">ChatGPT</span><span class="chip">Prompt Engineering</span><span class="chip">Google Antigravity</span></div></div>
-    <div class="card"><h3>🎨 UI/UX & Design</h3><div class="chips"><span class="chip">Bootstrap</span><span class="chip">Flexbox / Grid</span><span class="chip">Canva</span><span class="chip">Figma (basic)</span></div></div>
-    <div class="card"><h3>🚀 Deployment</h3><div class="chips"><span class="chip">Git</span><span class="chip">GitHub</span><span class="chip">Netlify</span><span class="chip">Vercel</span></div></div>
-  </div>
-</section>
-
-<section id="experience" class="reveal">
-  <h2>Internship Experience</h2>
-  <div class="card">
-    <p class="date">AUG 2024 – MAY 2025</p>
-    <h3>Web Developer</h3>
-    <ul>
-      <li>Built responsive business websites using HTML5, CSS3 and JavaScript.</li>
-      <li>Applied SEO-friendly structure and optimized metadata for better visibility.</li>
-      <li>Improved performance using lazy loading, asset compression and minimized CSS/JS.</li>
-      <li>Deployed and maintained websites using Git, GitHub and Netlify.</li>
-    </ul>
-  </div>
-</section>
-
-<section id="projects" class="reveal">
-  <h2>Key Projects</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Payzo</h3><span class="tag">React</span><span class="tag">TypeScript</span>
-      <ul>
-        <li>Website for a cashback app startup with Features, Benefits, Pricing, FAQ and Contact pages.</li>
-        <li>Works on phones, tablets and computers, with light/dark mode and Google Play / App Store buttons.</li>
-        <li>Navigation, forms with input checking, and Terms, Privacy and Refund policy pages.</li>
-      </ul>
-      <a class="visit" href="https://payzo-rd.netlify.app/" target="_blank" rel="noopener">🔗 Live Site</a>
-    </div>
-    <div class="card">
-      <h3>Freelance Web</h3><span class="tag">HTML</span><span class="tag">CSS</span><span class="tag">JS</span>
-      <ul>
-        <li>Multi-page site for a web design studio: Home, About, Services, Pricing, Contact.</li>
-        <li>Fully responsive design.</li>
-        <li>Service cards, pricing tables and a footer with contact details.</li>
-      </ul>
-      <a class="visit" href="https://webdesigningstudio1.netlify.app/" target="_blank" rel="noopener">🔗 Live Site</a>
-    </div>
-    <div class="card">
-      <h3>Samhitha Degree College</h3><span class="tag">HTML5</span><span class="tag">CSS3</span><span class="tag">JavaScript</span>
-      <ul>
-        <li>Multi-page site: Home, About, Courses, Campus Life, Apply &amp; Enroll, Contact.</li>
-        <li>Sections for courses, faculty, infrastructure, awards and placements.</li>
-        <li>Deployed live on Netlify.</li>
-      </ul>
-      <a class="visit" href="https://samhithadegreecollege.netlify.app/" target="_blank" rel="noopener">🔗 Live Site</a>
+  <!-- Mobile Drawer Overlay -->
+  <div id="mobile-drawer" class="mobile-drawer">
+    <div class="drawer-content">
+      <div class="drawer-header">
+        <span class="drawer-logo">Teja<span class="logo-accent">.dev</span></span>
+        <button id="drawer-close" class="icon-btn" aria-label="Close menu">✕</button>
+      </div>
+      <nav class="drawer-links">
+        <a href="#home" class="drawer-link">Home</a>
+        <a href="#about" class="drawer-link">About</a>
+        <a href="#skills" class="drawer-link">Skills</a>
+        <a href="#projects" class="drawer-link">Projects</a>
+        <a href="#experience" class="drawer-link">Experience</a>
+        <a href="#education" class="drawer-link">Education</a>
+        <a href="#contact" class="drawer-link">Contact</a>
+      </nav>
+      <div class="drawer-footer">
+        <a href="#contact" class="btn btn-primary w-full">Get In Touch</a>
+        <div class="drawer-socials">
+          <a href="https://github.com/Arjuntej987" target="_blank" rel="noopener" aria-label="GitHub">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path
+                d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
+              </path>
+            </svg>
+          </a>
+          <a href="https://www.linkedin.com/in/mittiredditeja" target="_blank" rel="noopener" aria-label="LinkedIn">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+              <rect x="2" y="9" width="4" height="12"></rect>
+              <circle cx="4" cy="4" r="2"></circle>
+            </svg>
+          </a>
+          <a href="mailto:arjuntej121@gmail.com" aria-label="Email">
+            <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+              <polyline points="22,6 12,13 2,6"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
     </div>
   </div>
-  <p style="margin-top:20px"><a href="https://github.com/Arjuntej987" target="_blank" rel="noopener">See more on my GitHub →</a></p>
-</section>
 
-<section id="education" class="reveal">
-  <h2>Education</h2>
-  <div class="card">
-    <p class="date">Dec 2020 – April 2024</p>
-    <h3>Bachelor of Technology – Mechanical</h3>
-    <p style="color:var(--muted)">Lendi Institute of Engineering and Technology, Vizianagaram<br>CGPA: 7.47</p>
-  </div>
-</section>
+  <main>
+    <!-- HERO SECTION -->
+    <section id="home" class="hero-section">
+      <div class="container hero-container">
+        <!-- Hero Text Column -->
+        <div class="hero-content">
+          <!-- <div class="hero-badge">
+            <span class="badge-glow-dot"></span>
+            <span>Frontend Web Developer • Open to Roles</span>
+          </div> -->
 
-<section id="contact" class="reveal">
-  <h2>Contact Me</h2>
-  <div class="grid">
-    <div class="info">
-      <p>📍 Vizianagaram, Andhra Pradesh</p>
-      <p>📞 <a href="tel:+919100227569">+91 9100227569</a></p>
-      <p>✉️ <a href="mailto:arjuntej121@gmail.com">arjuntej121@gmail.com</a></p>
-      <p>🔗 <a href="https://www.linkedin.com/in/mittiredditeja" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/Arjuntej987" target="_blank" rel="noopener">GitHub</a></p>
+          <h1 class="hero-title">Mittireddi <span class="text-gradient">Teja</span></h1>
+
+          <!-- <div class="hero-typewriter-wrapper">
+            <span class="type-lead">I am a</span>
+            <span id="typing-text" class="typing-text">Frontend Developer</span>
+            <span class="typing-cursor">|</span>
+          </div> -->
+          <div class="hero-badge">
+            <span>Frontend Web Developer</span>
+          </div>
+
+          <p class="hero-description">
+            Frontend-focused web developer building responsive websites with HTML5, modern CSS, JavaScript, and React,
+            using AI-assisted workflows to build fast, scalable, and modern web applications.
+          </p>
+
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary btn-glow">
+              <span>Explore My Work</span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2.2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <line x1="5" y1="12" x2="19" y2="12"></line>
+                <polyline points="12 5 19 12 12 19"></polyline>
+              </svg>
+            </a>
+            <button id="btn-view-resume" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                <polyline points="14 2 14 8 20 8"></polyline>
+                <line x1="16" y1="13" x2="8" y2="13"></line>
+                <line x1="16" y1="17" x2="8" y2="17"></line>
+                <polyline points="10 9 9 9 8 9"></polyline>
+              </svg>
+              <span>View Resume</span>
+            </button>
+            <a href="#contact" class="btn btn-secondary">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round">
+                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                <polyline points="22,6 12,13 2,6"></polyline>
+              </svg>
+              <span>Contact Me</span>
+            </a>
+          </div>
+
+          <!-- Quick Social & Info Bar -->
+          <div class="hero-social-strip">
+            <a href="https://github.com/Arjuntej987" target="_blank" rel="noopener" class="social-chip"
+              title="GitHub Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+              <span>GitHub</span>
+            </a>
+            <a href="https://www.linkedin.com/in/mittiredditeja" target="_blank" rel="noopener" class="social-chip"
+              title="LinkedIn Profile">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                <path
+                  d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+              </svg>
+              <span>LinkedIn</span>
+            </a>
+            <div class="social-chip location-chip">
+              <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                <circle cx="12" cy="10" r="3"></circle>
+              </svg>
+              <span>Vizag,Andhra Pradesh, India</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KEY METRICS / STATS BENTO -->
+    <section class="stats-bar-section">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="3">3</span><span class="stat-plus">+</span>
+            </div>
+            <div class="stat-title">Featured Production Apps</div>
+            <div class="stat-desc">Live deployed &amp; publicly accessible</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="9">9</span><span class="stat-plus">+</span>
+            </div>
+            <div class="stat-title">Months Web Internship</div>
+            <div class="stat-desc">Commercial client delivery</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="99">99</span><span class="stat-percent">%</span>
+            </div>
+            <div class="stat-title">Performance &amp; SEO Focus</div>
+            <div class="stat-desc">Lighthouse accessibility &amp; speed</div>
+          </div>
+
+          <div class="stat-card">
+            <div class="stat-number-wrapper">
+              <span class="stat-number" data-target="15">15</span><span class="stat-plus">+</span>
+            </div>
+            <div class="stat-title">Modern Technologies</div>
+            <div class="stat-desc">Frontend, AI tools &amp; DevOps</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT SECTION (BENTO GRID) -->
+    <section id="about" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">About Me</span>
+          <h2 class="section-title">About <span class="text-gradient">Me</span></h2>
+          <p class="section-subtitle">Passionate Frontend Developer creating clean, intuitive, and performant web
+            experiences.</p>
+        </div>
+
+        <div class="bento-about-grid">
+          <!-- Bento Card 1: Main Story -->
+          <div class="bento-card bento-story">
+            <div class="bento-icon-tag">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                <circle cx="12" cy="7" r="4"></circle>
+              </svg>
+              <span>Who I Am</span>
+            </div>
+            <h3 class="bento-heading">Frontend Developer with an Engineering Backbone</h3>
+            <p>
+              Based in <strong>Vizianagaram, Andhra Pradesh</strong>, I am a frontend developer who combines analytical
+              engineering discipline with modern web design artistry. With a background in Mechanical Engineering (CGPA
+              7.47), I bring systematic problem solving, mathematical precision, and endurance into writing clean,
+              maintainable web software.
+            </p>
+            <p>
+              I take pride in translating complex functional requirements into intuitive, fluid interfaces. Whether
+              implementing responsive layouts, optimizing Core Web Vitals, or integrating AI-driven workflows, I focus
+              on delivering end-to-end polish.
+            </p>
+            <div class="story-tags">
+              <span class="pill-chip">⚡ Fast Prototyping</span>
+              <span class="pill-chip">🎨 Modern Glassmorphism</span>
+              <span class="pill-chip">🔍 SEO & Accessibility</span>
+              <span class="pill-chip">💡 Continuous Learner</span>
+            </div>
+          </div>
+
+          <!-- Bento Card 4: Soft Skills & Team Superpowers -->
+          <div class="bento-card bento-softskills">
+            <div class="bento-icon-tag">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="9" cy="7" r="4"></circle>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+              </svg>
+              <span>Soft Skills</span>
+            </div>
+            <div class="interactive-soft-skills">
+              <div class="soft-skill-pill">
+                <span class="ss-icon">🧩</span>
+                <div class="ss-text-group">
+                  <span class="ss-name">Problem-Solving</span>
+                  <span class="ss-desc">Breaking down complex UI roadblocks</span>
+                </div>
+              </div>
+              <div class="soft-skill-pill">
+                <span class="ss-icon">⚡</span>
+                <div class="ss-text-group">
+                  <span class="ss-name">Tech Adaptability</span>
+                  <span class="ss-desc">Swift mastery of new frameworks &amp; APIs</span>
+                </div>
+              </div>
+              <div class="soft-skill-pill">
+                <span class="ss-icon">💬</span>
+                <div class="ss-text-group">
+                  <span class="ss-name">Client Communication</span>
+                  <span class="ss-desc">Active listening &amp; transparent updates</span>
+                </div>
+              </div>
+              <div class="soft-skill-pill">
+                <span class="ss-icon">🔄</span>
+                <div class="ss-text-group">
+                  <span class="ss-name">Feedback Handling</span>
+                  <span class="ss-desc">Iterating rapidly based on user testing</span>
+                </div>
+              </div>
+              <div class="soft-skill-pill">
+                <span class="ss-icon">⏱️</span>
+                <div class="ss-text-group">
+                  <span class="ss-name">Time Management</span>
+                  <span class="ss-desc">Disciplined delivery within deadlines</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECHNICAL SKILLS MATRIX -->
+    <section id="skills" class="section-padding bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Technical Arsenal</span>
+          <h2 class="section-title"><span class="text-gradient">Technologies</span></h2>
+        </div>
+
+        <!-- Skill Filter Tabs -->
+        <div class="skills-filter-tabs">
+          <button class="skill-tab active" data-filter="all">All Stack</button>
+          <button class="skill-tab" data-filter="frontend">Frontend &amp; Core</button>
+          <button class="skill-tab" data-filter="styling">Styling &amp; Design</button>
+          <button class="skill-tab" data-filter="ai">AI &amp; Workflows</button>
+          <button class="skill-tab" data-filter="devops">DevOps &amp; Tools</button>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-grid">
+          <!-- Frontend -->
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="--accent-color: #e34f26">
+              <span class="tech-symbol">&lt;/&gt;</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>HTML5 Semantic</h4>
+                <span class="skill-badge">Advanced</span>
+              </div>
+              <p>Modern semantic hierarchy, accessible aria standards, meta architectures &amp; SEO optimization.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="--accent-color: #2965f1">
+              <span class="tech-symbol">#</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>CSS3 &amp; Modern Layouts</h4>
+                <span class="skill-badge">Advanced</span>
+              </div>
+              <p>Flexbox, CSS Grid, custom properties, responsive fluid typography, glassmorphism &amp; keyframe
+                animations.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="--accent-color: #f7df1e">
+              <span class="tech-symbol">JS</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>JavaScript (ES6+)</h4>
+                <span class="skill-badge">Proficient</span>
+              </div>
+              <p>Asynchronous programming, Promises, DOM manipulation, Fetch API, modern data structures &amp; clean
+                modular code.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="--accent-color: #61dafb">
+              <span class="tech-symbol">⚛</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>React.js</h4>
+                <span class="skill-badge">Proficient</span>
+              </div>
+              <p>Functional components, React Hooks (`useState`, `useEffect`), state management, props drilling
+                mitigation &amp; SPA architecture.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="--accent-color: #3178c6">
+              <span class="tech-symbol">TS</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>TypeScript</h4>
+                <span class="skill-badge">Foundations</span>
+              </div>
+              <p>Type definitions, interfaces, typed props, compile-time safety and self-documenting codebases.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="frontend">
+            <div class="skill-icon-wrapper" style="--accent-color: #10b981">
+              <span class="tech-symbol">📱</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>Responsive Web Design</h4>
+                <span class="skill-badge">Advanced</span>
+              </div>
+              <p>Mobile-first paradigm, cross-browser compatibility, fluid scaling, safe-area insets &amp; viewport
+                testing.</p>
+            </div>
+          </div>
+
+          <!-- Styling & Design -->
+          <div class="skill-card" data-category="styling">
+            <div class="skill-icon-wrapper" style="--accent-color: #7952b3">
+              <span class="tech-symbol">B</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>Bootstrap &amp; Utilities</h4>
+                <span class="skill-badge">Advanced</span>
+              </div>
+              <p>Grid systems, UI components, modal dialogues, navigation bars and rapid prototyping templates.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="styling">
+            <div class="skill-icon-wrapper" style="--accent-color: #f24e1e">
+              <span class="tech-symbol">🎨</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>Figma UI &amp; Canva</h4>
+                <span class="skill-badge">Intermediate</span>
+              </div>
+              <p>Wireframing, design tokens, asset preparation, vector export, layout mockups and color harmony
+                curation.</p>
+            </div>
+          </div>
+
+          <!-- AI & Modern Workflows -->
+          <div class="skill-card" data-category="ai">
+            <div class="skill-icon-wrapper" style="--accent-color: #10a37f">
+              <span class="tech-symbol">🤖</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>AI-Assisted Development</h4>
+                <span class="skill-badge">Specialist</span>
+              </div>
+              <p>Prompt engineering, ChatGPT coding workflows, rapid code generation, algorithmic optimization &amp;
+                pair programming.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="ai">
+            <div class="skill-icon-wrapper" style="--accent-color: #4285f4">
+              <span class="tech-symbol">G</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>Google Antigravity &amp; LLM Tooling</h4>
+                <span class="skill-badge">Advanced</span>
+              </div>
+              <p>Agentic workflows, intelligent code navigation, automated refactoring, and AI-accelerated frontend
+                shipping.</p>
+            </div>
+          </div>
+
+          <!-- DevOps & Tools -->
+          <div class="skill-card" data-category="devops">
+            <div class="skill-icon-wrapper" style="--accent-color: #f05032">
+              <span class="tech-symbol">Git</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>Git &amp; GitHub</h4>
+                <span class="skill-badge">Proficient</span>
+              </div>
+              <p>Branching strategies, commits, pull requests, merge conflict resolution, repository management &amp; CI
+                triggers.</p>
+            </div>
+          </div>
+
+          <div class="skill-card" data-category="devops">
+            <div class="skill-icon-wrapper" style="--accent-color: #00c7b7">
+              <span class="tech-symbol">▲</span>
+            </div>
+            <div class="skill-info">
+              <div class="skill-header">
+                <h4>Netlify &amp; Vercel</h4>
+                <span class="skill-badge">Advanced</span>
+              </div>
+              <p>Production deployments, custom domains, environment variables, headers configuration &amp; automated
+                preview builds.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FEATURED PROJECTS SHOWCASE -->
+    <section id="projects" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Industrial Exposure</span>
+          <h2 class="section-title"><span class="text-gradient">Projects</span></h2>
+        </div>
+
+        <!-- Project Filter Buttons -->
+        <div class="project-filters">
+          <button class="proj-filter-btn active" data-filter="all">All Projects</button>
+          <button class="proj-filter-btn" data-filter="react">React &amp; TypeScript</button>
+          <button class="proj-filter-btn" data-filter="business">Business &amp; Agency</button>
+          <button class="proj-filter-btn" data-filter="education">Education</button>
+        </div>
+
+        <div class="projects-grid">
+          <!-- Project 1: Payzo -->
+          <article class="project-card" data-category="react">
+            <div class="project-media">
+              <img src="assets/project-payzo.jpg" alt="Payzo Fintech Cashback App Mockup" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://payzo-rd.netlify.app/" target="_blank" rel="noopener" class="overlay-btn live-btn"
+                  title="Open Live Site">
+                  <span>Visit Live Demo</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="overlay-btn details-btn" data-modal="modal-payzo">
+                  <span>Project Deep Dive</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+              </div>
+              <span class="project-badge-featured">Featured App</span>
+            </div>
+
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tech-pill pill-react">React</span>
+                <span class="tech-pill pill-ts">TypeScript</span>
+                <span class="tech-pill">Responsive UI</span>
+                <span class="tech-pill">Fintech</span>
+              </div>
+              <h3 class="project-title">Payzo – Cashback Platform</h3>
+              <p class="project-desc">
+                High-converting landing and product website for a modern cashback app startup. Includes comprehensive
+                product feature tour, benefits breakdown, dynamic pricing tiers, FAQ accordion, light/dark mode
+                switcher, and Google Play / App Store download triggers.
+              </p>
+              <ul class="project-highlights">
+                <li>Dynamic multi-theme support (automatic system sync + user toggle)</li>
+                <li>Input validation on contact &amp; onboarding inquiry forms</li>
+                <li>Dedicated Terms of Service, Privacy Policy, and Refund policy pages</li>
+              </ul>
+              <div class="project-footer">
+                <a href="https://payzo-rd.netlify.app/" target="_blank" rel="noopener" class="link-btn primary-link">
+                  <span>Launch Site</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="link-btn text-link" data-modal="modal-payzo">Overview &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 2: Freelance Web Studio -->
+          <article class="project-card" data-category="business">
+            <div class="project-media">
+              <img src="assets/project-studio.jpg" alt="Freelance Web Design Studio Mockup" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://webdesigningstudio1.netlify.app/" target="_blank" rel="noopener"
+                  class="overlay-btn live-btn" title="Open Live Site">
+                  <span>Visit Live Demo</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="overlay-btn details-btn" data-modal="modal-studio">
+                  <span>Project Deep Dive</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+              </div>
+              <span class="project-badge-featured">Agency Platform</span>
+            </div>
+
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tech-pill pill-html">HTML5</span>
+                <span class="tech-pill pill-css">CSS3 Grid/Flex</span>
+                <span class="tech-pill pill-js">Vanilla JS</span>
+                <span class="tech-pill">Client Services</span>
+              </div>
+              <h3 class="project-title">Freelance Web Studio</h3>
+              <p class="project-desc">
+                Multi-page agency website built for a digital creative studio. Features intuitive navigation across
+                Home, About, Services, Interactive Pricing tables, client showcases, and an interactive contact
+                interface.
+              </p>
+              <ul class="project-highlights">
+                <li>Custom CSS glassmorphic aesthetic with fluid animations</li>
+                <li>Tiered service packages with clear value propositions</li>
+                <li>Zero external framework overhead for lightning-fast first paint</li>
+              </ul>
+              <div class="project-footer">
+                <a href="https://webdesigningstudio1.netlify.app/" target="_blank" rel="noopener"
+                  class="link-btn primary-link">
+                  <span>Launch Site</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="link-btn text-link" data-modal="modal-studio">Overview &rarr;</button>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project 3: Samhitha Degree College -->
+          <article class="project-card" data-category="education">
+            <div class="project-media">
+              <img src="assets/project-college.jpg" alt="Samhitha Degree College Academic Portal" loading="lazy">
+              <div class="project-overlay">
+                <a href="https://samhithadegreecollege.netlify.app/" target="_blank" rel="noopener"
+                  class="overlay-btn live-btn" title="Open Live Site">
+                  <span>Visit Live Demo</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="overlay-btn details-btn" data-modal="modal-college">
+                  <span>Project Deep Dive</span>
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <line x1="12" y1="16" x2="12" y2="12"></line>
+                    <line x1="12" y1="8" x2="12.01" y2="8"></line>
+                  </svg>
+                </button>
+              </div>
+              <span class="project-badge-featured">Education Portal</span>
+            </div>
+
+            <div class="project-body">
+              <div class="project-tags">
+                <span class="tech-pill pill-html">HTML5</span>
+                <span class="tech-pill pill-css">CSS3</span>
+                <span class="tech-pill pill-js">JavaScript</span>
+                <span class="tech-pill">Higher Ed</span>
+              </div>
+              <h3 class="project-title">Samhitha Degree College</h3>
+              <p class="project-desc">
+                Official institutional web portal developed to serve students, parents, and faculty. Features an
+                extensive program catalog (B.Sc, B.Com, B.A), campus gallery, admission intake workflows, placement
+                records, and faculty directory.
+              </p>
+              <ul class="project-highlights">
+                <li>Accessible course discovery with clear syllabi breakdowns</li>
+                <li>Fully responsive across mobile phones, tablets, and desktops</li>
+                <li>Integrated inquiry form with streamlined admission procedures</li>
+              </ul>
+              <div class="project-footer">
+                <a href="https://samhithadegreecollege.netlify.app/" target="_blank" rel="noopener"
+                  class="link-btn primary-link">
+                  <span>Launch Site</span>
+                  <svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.5">
+                    <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                    <polyline points="15 3 21 3 21 9"></polyline>
+                    <line x1="10" y1="14" x2="21" y2="3"></line>
+                  </svg>
+                </a>
+                <button class="link-btn text-link" data-modal="modal-college">Overview &rarr;</button>
+              </div>
+            </div>
+          </article>
+        </div>
+
+        <!-- GitHub More Works Banner -->
+        <div class="github-cta-banner">
+          <div class="banner-content">
+            <div class="banner-icon">
+              <svg viewBox="0 0 24 24" width="32" height="32" fill="currentColor">
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+              </svg>
+            </div>
+            <div>
+              <h3>Looking for more experimental code and repositories?</h3>
+              <p>Check out my open-source codebases, mini tools, and GitHub repositories.</p>
+            </div>
+          </div>
+          <a href="https://github.com/Arjuntej987" target="_blank" rel="noopener" class="btn btn-secondary">
+            <span>Explore GitHub Repos</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2.5">
+              <line x1="5" y1="12" x2="19" y2="12"></line>
+              <polyline points="12 5 19 12 12 19"></polyline>
+            </svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- WORK EXPERIENCE TIMELINE -->
+    <section id="experience" class="section-padding bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Career Milestones</span>
+          <h2 class="section-title">Professional <span class="text-gradient">Work Experience</span></h2>
+          <p class="section-subtitle">Real-world commercial experience delivering performant, client-facing frontend
+            applications.</p>
+        </div>
+
+        <div class="timeline-wrapper">
+          <div class="timeline-line"></div>
+
+          <!-- Timeline Item: Web Developer Intern -->
+          <div class="timeline-card">
+            <div class="timeline-dot">
+              <span class="dot-inner"></span>
+            </div>
+            <div class="timeline-content">
+              <div class="timeline-header">
+                <div>
+                  <span class="timeline-badge">Internship</span>
+                  <h3 class="timeline-role">Web Developer</h3>
+                  <div class="timeline-company">Professional Web Development Internship</div>
+                </div>
+                <div class="timeline-period">
+                  <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                    <line x1="16" y1="2" x2="16" y2="6"></line>
+                    <line x1="8" y1="2" x2="8" y2="6"></line>
+                    <line x1="3" y1="10" x2="21" y2="10"></line>
+                  </svg>
+                  <span>AUG 2024 – MAY 2025</span>
+                </div>
+              </div>
+
+              <div class="timeline-body">
+                <p class="timeline-summary">
+                  Collaborated on commercial client initiatives to design, develop, and deploy responsive, modern web
+                  platforms with uncompromising performance and accessibility standards.
+                </p>
+                <div class="timeline-achievements">
+                  <div class="achievement-item">
+                    <span class="achieve-icon">⚡</span>
+                    <div>
+                      <strong>Responsive Frontend Architecture:</strong>
+                      Built scalable, multi-screen responsive interfaces using HTML5, modern CSS3, and JavaScript ES6+,
+                      guaranteeing flawless user experiences on mobile, tablet, and widescreen viewports.
+                    </div>
+                  </div>
+                  <div class="achievement-item">
+                    <span class="achieve-icon">📈</span>
+                    <div>
+                      <strong>SEO &amp; Metadata Optimization:</strong>
+                      Engineered semantic document outlines, structured Open Graph meta tags, and schema layouts to
+                      maximize discoverability and organic search rankings.
+                    </div>
+                  </div>
+                  <div class="achievement-item">
+                    <span class="achieve-icon">🚀</span>
+                    <div>
+                      <strong>Core Web Vitals &amp; Performance:</strong>
+                      Implemented asset compression, modern WebP images, lazy loading strategies, and CSS/JS code
+                      minification, resulting in sub-second initial load speeds.
+                    </div>
+                  </div>
+                  <div class="achievement-item">
+                    <span class="achieve-icon">🛠️</span>
+                    <div>
+                      <strong>Continuous Deployment:</strong>
+                      Streamlined version control workflows with Git and GitHub, establishing reliable automated
+                      deployment pipelines through Netlify and Vercel.
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EDUCATION & FOUNDATIONS -->
+    <section id="education" class="section-padding">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Academic Background</span>
+          <h2 class="section-title">Education &amp; <span class="text-gradient">Engineering Mindset</span></h2>
+          <p class="section-subtitle">How a technical engineering foundation shapes disciplined code structure and
+            problem solving.</p>
+        </div>
+
+        <div class="education-grid">
+          <div class="edu-card">
+            <div class="edu-header">
+              <div class="edu-icon-box">
+                <svg viewBox="0 0 24 24" width="28" height="28" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M22 10v6M2 10l10-5 10 5-10 5z"></path>
+                  <path d="M6 12v5c3 3 9 3 12 0v-5"></path>
+                </svg>
+              </div>
+              <div class="edu-meta">
+                <span class="edu-period">DEC 2020 – APR 2024</span>
+                <h3 class="edu-degree">Bachelor of Technology (B.Tech)</h3>
+                <div class="edu-specialization">Mechanical Engineering</div>
+              </div>
+            </div>
+
+            <div class="edu-body">
+              <div class="edu-institution">
+                <strong>Lendi Institute of Engineering and Technology</strong>
+                <span>Vizianagaram, Andhra Pradesh</span>
+              </div>
+
+              <div class="edu-stats-row">
+                <div class="edu-stat-item">
+                  <span class="edu-stat-val">7.47</span>
+                  <span class="edu-stat-lbl">CGPA Grade</span>
+                </div>
+                <div class="edu-stat-item">
+                  <span class="edu-stat-val">4 Years</span>
+                  <span class="edu-stat-lbl">Rigorous Curriculum</span>
+                </div>
+                <div class="edu-stat-item">
+                  <span class="edu-stat-val">First Class</span>
+                  <span class="edu-stat-lbl">Distinction</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section id="contact" class="section-padding bg-alt">
+      <div class="container">
+        <div class="section-header">
+          <span class="section-tag">Get In Touch</span>
+          <h2 class="section-title">Let's Build Something <span class="text-gradient">Extraordinary Together</span></h2>
+          <p class="section-subtitle">I'm currently available for full-time frontend developer roles, contract projects,
+            and exciting collaborations.</p>
+        </div>
+
+        <div class="contact-layout">
+          <!-- Left Column: Quick Contact Cards -->
+          <div class="contact-cards-col">
+            <!-- Email Card with Compose Button -->
+            <div class="contact-info-card">
+              <div class="c-icon-wrap">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+              </div>
+              <div class="c-text-wrap">
+                <span class="c-label">Direct Email</span>
+                <a href="mailto:arjuntej121@gmail.com" class="c-value">arjuntej121@gmail.com</a>
+              </div>
+              <a href="https://mail.google.com/mail/u/0/#inbox?compose=new" target="_blank" rel="noopener"
+                class="btn-action-chip" title="Compose email in Gmail">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                  <polyline points="22,6 12,13 2,6"></polyline>
+                </svg>
+                <span>Compose</span>
+              </a>
+            </div>
+
+            <!-- Phone Card with WhatsApp Chat Button -->
+            <div class="contact-info-card">
+              <div class="c-icon-wrap">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path
+                    d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
+                  </path>
+                </svg>
+              </div>
+              <div class="c-text-wrap">
+                <span class="c-label">Phone &amp; WhatsApp</span>
+                <a href="tel:+919100227569" class="c-value">+91 9100227569</a>
+              </div>
+              <a href="https://web.whatsapp.com/send?phone=919100227569" target="_blank" rel="noopener"
+                class="btn-action-chip btn-whatsapp" title="Chat on WhatsApp">
+                <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor">
+                  <path
+                    d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z" />
+                </svg>
+                <span>Chat</span>
+              </a>
+            </div>
+
+            <!-- Location Card -->
+            <div class="contact-info-card">
+              <div class="c-icon-wrap">
+                <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2">
+                  <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                  <circle cx="12" cy="10" r="3"></circle>
+                </svg>
+              </div>
+              <div class="c-text-wrap">
+                <span class="c-label">Location</span>
+                <span class="c-value">Vizianagaram, Andhra Pradesh, India</span>
+              </div>
+            </div>
+
+            <!-- Social Links Grid -->
+            <div class="social-bento-box">
+              <a href="https://www.linkedin.com/in/mittiredditeja" target="_blank" rel="noopener"
+                class="social-bento-link linkedin">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path
+                    d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                </svg>
+                <span>Connect on LinkedIn</span>
+                <span class="arrow-icon">↗</span>
+              </a>
+              <a href="https://github.com/Arjuntej987" target="_blank" rel="noopener" class="social-bento-link github">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+                  <path
+                    d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z" />
+                </svg>
+                <span>Follow on GitHub</span>
+                <span class="arrow-icon">↗</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="modern-footer">
+    <div class="container footer-container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="logo-brand">
+            <span class="logo-avatar small">
+              <img src="assets/avatar.jpg" alt="Teja Avatar" width="28" height="28">
+            </span>
+            <span class="logo-text">Mittireddi Teja<span class="logo-accent">.dev</span></span>
+          </a>
+          <p class="footer-tagline">Crafting modern, accessible, and ultra-fast web interfaces.</p>
+        </div>
+
+        <div class="footer-nav">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#skills">Skills</a>
+          <a href="#projects">Projects</a>
+          <a href="#experience">Experience</a>
+          <a href="#contact">Contact</a>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p class="copyright">
+          &copy; <span id="current-year">2026</span> Mittireddi Teja. All rights reserved.
+        </p>
+        <div class="footer-links">
+          <a href="https://github.com/Arjuntej987" target="_blank" rel="noopener">GitHub</a>
+          <span class="sep">•</span>
+          <a href="https://www.linkedin.com/in/mittiredditeja" target="_blank" rel="noopener">LinkedIn</a>
+          <span class="sep">•</span>
+          <a href="mailto:arjuntej121@gmail.com">Email</a>
+        </div>
+      </div>
     </div>
-    <form id="form">
-      <input id="name" placeholder="Your name">
-      <input id="email" placeholder="Your email">
-      <textarea id="text" rows="4" placeholder="Your message"></textarea>
-      <button class="btn fill" type="submit">Send Message</button>
-      <p id="msg"></p>
-    </form>
+  </footer>
+
+  <!-- FLOATING BACK TO TOP BUTTON -->
+  <button id="btn-back-to-top" class="back-to-top-btn" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2.5"
+      stroke-linecap="round" stroke-linejoin="round">
+      <polyline points="18 15 12 9 6 15"></polyline>
+    </svg>
+  </button>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toast" class="toast-popup" role="status" aria-live="polite"></div>
+
+  <!-- PROJECT DETAILS MODALS -->
+  <!-- Payzo Modal -->
+  <div class="modal-backdrop" id="modal-payzo">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-media">
+        <img src="assets/project-payzo.jpg" alt="Payzo App Interface Preview">
+      </div>
+      <div class="modal-body">
+        <div class="modal-tags">
+          <span class="tech-pill pill-react">React</span>
+          <span class="tech-pill pill-ts">TypeScript</span>
+          <span class="tech-pill">Tailwind/Modern CSS</span>
+          <span class="tech-pill">Fintech</span>
+        </div>
+        <h3 class="modal-title">Payzo – Cashback App Web Platform</h3>
+        <p class="modal-desc">
+          Payzo is a modern consumer fintech application startup aimed at providing transparent, high-yield cashback
+          rewards across daily retail, dining, and travel transactions.
+        </p>
+        <h4>Key Technical Highlights</h4>
+        <ul class="modal-list">
+          <li><strong>Architecture:</strong> Component-based single-page application built with React and TypeScript for
+            maximum maintainability.</li>
+          <li><strong>Dynamic Theme Engine:</strong> Seamless light/dark mode switching with smooth transition states
+            and system preference detection.</li>
+          <li><strong>Interactive Conversion Flow:</strong> Benefit breakdowns, dynamic interactive cashback
+            calculators, and verified download triggers for iOS &amp; Android.</li>
+          <li><strong>Compliance Ready:</strong> Complete legal compliance integration including custom terms of
+            service, privacy policies, and refund protocols.</li>
+        </ul>
+        <div class="modal-actions">
+          <a href="https://payzo-rd.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>Visit Live Site</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <button class="btn btn-secondary modal-dismiss">Close Preview</button>
+        </div>
+      </div>
+    </div>
   </div>
-</section>
 
-<footer>© <span id="year"></span> Mittireddi Teja. Built with HTML, CSS &amp; JavaScript.</footer>
+  <!-- Studio Modal -->
+  <div class="modal-backdrop" id="modal-studio">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-media">
+        <img src="assets/project-studio.jpg" alt="Freelance Web Studio Preview">
+      </div>
+      <div class="modal-body">
+        <div class="modal-tags">
+          <span class="tech-pill pill-html">HTML5</span>
+          <span class="tech-pill pill-css">CSS3 Grid</span>
+          <span class="tech-pill pill-js">Vanilla JS</span>
+          <span class="tech-pill">Agency Site</span>
+        </div>
+        <h3 class="modal-title">Freelance Web Studio – Digital Agency Platform</h3>
+        <p class="modal-desc">
+          A bespoke digital agency website created to market boutique web design, UI/UX conceptualization, and custom
+          engineering services for high-growth businesses.
+        </p>
+        <h4>Key Technical Highlights</h4>
+        <ul class="modal-list">
+          <li><strong>Zero-Dependency Performance:</strong> Built entirely with vanilla HTML, modern CSS Grid/Flexbox,
+            and ES6+ JavaScript to achieve sub-second load times.</li>
+          <li><strong>Glassmorphic UI Design:</strong> Subtle backdrop blur, layered lighting gradients, and smooth
+            hover micro-animations.</li>
+          <li><strong>Comprehensive Multi-Page Architecture:</strong> Dedicated service tiers, transparent pricing
+            comparison matrix, client reviews, and intake inquiries.</li>
+        </ul>
+        <div class="modal-actions">
+          <a href="https://webdesigningstudio1.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>Visit Live Site</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <button class="btn btn-secondary modal-dismiss">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-<script src="script.js"></script>
+  <!-- College Modal -->
+  <div class="modal-backdrop" id="modal-college">
+    <div class="modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="modal-media">
+        <img src="assets/project-college.jpg" alt="Samhitha Degree College Preview">
+      </div>
+      <div class="modal-body">
+        <div class="modal-tags">
+          <span class="tech-pill pill-html">HTML5</span>
+          <span class="tech-pill pill-css">CSS3</span>
+          <span class="tech-pill pill-js">JavaScript</span>
+          <span class="tech-pill">Higher Ed</span>
+        </div>
+        <h3 class="modal-title">Samhitha Degree College – Institutional Portal</h3>
+        <p class="modal-desc">
+          An institutional web portal designed to serve over a thousand prospective students and enrolled undergraduates
+          across multiple degree disciplines.
+        </p>
+        <h4>Key Technical Highlights</h4>
+        <ul class="modal-list">
+          <li><strong>Academic Course Explorer:</strong> Structured breakdown of degree programs, core course electives,
+            and eligibility requirements.</li>
+          <li><strong>Campus Life &amp; Placements Showcase:</strong> Responsive gallery highlighting laboratory
+            facilities, seminar rooms, student placements, and extracurriculars.</li>
+          <li><strong>Admission Lead Generation:</strong> Streamlined online application and inquiry capture forms
+            deployed live on Netlify.</li>
+        </ul>
+        <div class="modal-actions">
+          <a href="https://samhithadegreecollege.netlify.app/" target="_blank" rel="noopener" class="btn btn-primary">
+            <span>Visit Live Site</span>
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="2">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+              <polyline points="15 3 21 3 21 9"></polyline>
+              <line x1="10" y1="14" x2="21" y2="3"></line>
+            </svg>
+          </a>
+          <button class="btn btn-secondary modal-dismiss">Close Preview</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RESUME PREVIEW MODAL -->
+  <div class="modal-backdrop" id="modal-resume">
+    <div class="modal-card resume-modal-card">
+      <button class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="resume-modal-header">
+        <div>
+          <h3>Mittireddi Teja — Curriculum Vitae</h3>
+          <p class="text-muted">Frontend Web Developer • Vizianagaram, AP, India</p>
+        </div>
+        <div class="resume-actions">
+          <a href="mailto:arjuntej121@gmail.com?subject=Job%20Interview%20Request%20-%20Mittireddi%20Teja"
+            class="btn btn-primary btn-sm">Hire Teja</a>
+          <button id="btn-print-resume" class="btn btn-secondary btn-sm">Print / Save PDF</button>
+        </div>
+      </div>
+      <div class="resume-modal-body" id="printable-resume">
+        <div class="resume-sheet">
+          <div class="res-head">
+            <h1>MITTIREDDI TEJA</h1>
+            <p class="res-sub">Frontend Web Developer | React &amp; Modern JavaScript</p>
+            <div class="res-contact-row">
+              <span>📧 arjuntej121@gmail.com</span>
+              <span>📞 +91 9100227569</span>
+              <span>📍 Vizianagaram, AP</span>
+              <span>🔗 linkedin.com/in/mittiredditeja</span>
+              <span>💻 github.com/Arjuntej987</span>
+            </div>
+          </div>
+
+          <div class="res-section">
+            <h3 class="res-sec-title">PROFESSIONAL SUMMARY</h3>
+            <p>
+              Analytical and detail-driven Frontend Web Developer with professional internship experience delivering
+              responsive, modern web applications. Proficient in HTML5, CSS3, JavaScript (ES6+), React, and modern UI
+              engineering, leveraging AI-assisted development tools (ChatGPT, Google Antigravity) to expedite feature
+              delivery. Mechanical Engineering graduate (CGPA 7.47) with strong mathematical and systematic
+              problem-solving capabilities.
+            </p>
+          </div>
+
+          <div class="res-section">
+            <h3 class="res-sec-title">CORE TECHNICAL SKILLS</h3>
+            <div class="res-skills-list">
+              <div><strong>Frontend:</strong> React.js, JavaScript (ES6+), TypeScript, HTML5, CSS3/SCSS, Responsive
+                Design, Flexbox, Grid</div>
+              <div><strong>Tools &amp; DevOps:</strong> Git, GitHub, Netlify, Vercel, Vite, npm, Chrome DevTools,
+                Lighthouse</div>
+              <div><strong>UI &amp; AI:</strong> Bootstrap, Glassmorphism, Micro-interactions, ChatGPT Prompt
+                Engineering, Google Antigravity</div>
+              <div><strong>Soft Skills:</strong> Analytical Problem-Solving, Team Collaboration, Agile Delivery, Client
+                Communication</div>
+            </div>
+          </div>
+
+          <div class="res-section">
+            <h3 class="res-sec-title">PROFESSIONAL EXPERIENCE</h3>
+            <div class="res-item">
+              <div class="res-item-head">
+                <strong>Web Developer Intern</strong>
+                <span class="res-item-date">Aug 2024 – May 2025</span>
+              </div>
+              <ul class="res-item-bullets">
+                <li>Built pixel-perfect, responsive business websites adhering to modern web usability standards.</li>
+                <li>Architected SEO-friendly semantic layouts with structured metadata, increasing web traffic
+                  visibility.</li>
+                <li>Optimized Core Web Vitals, reducing load times through image compression, minification, and lazy
+                  loading.</li>
+                <li>Automated deployment pipelines with Git, GitHub, and Netlify for continuous integration and preview
+                  branches.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div class="res-section">
+            <h3 class="res-sec-title">FEATURED PROJECTS</h3>
+            <div class="res-item">
+              <div class="res-item-head">
+                <strong>Payzo – Cashback Platform (React, TypeScript)</strong>
+                <a href="https://payzo-rd.netlify.app/" target="_blank" rel="noopener">payzo-rd.netlify.app</a>
+              </div>
+              <p>Developed responsive web application with dynamic theme switching, input verification, interactive
+                benefits tour, and legal documentation pages.</p>
+            </div>
+            <div class="res-item">
+              <div class="res-item-head">
+                <strong>Freelance Web Studio (HTML5, CSS3, ES6)</strong>
+                <a href="https://webdesigningstudio1.netlify.app/" target="_blank"
+                  rel="noopener">webdesigningstudio1.netlify.app</a>
+              </div>
+              <p>Architected multi-page creative agency platform featuring glassmorphism design, service comparison
+                tables, and customer contact forms.</p>
+            </div>
+            <div class="res-item">
+              <div class="res-item-head">
+                <strong>Samhitha Degree College (HTML5, CSS3, JS)</strong>
+                <a href="https://samhithadegreecollege.netlify.app/" target="_blank"
+                  rel="noopener">samhithadegreecollege.netlify.app</a>
+              </div>
+              <p>Designed and deployed comprehensive institutional portal with course catalogs, faculty directories,
+                campus gallery, and admissions intake.</p>
+            </div>
+          </div>
+
+          <div class="res-section">
+            <h3 class="res-sec-title">EDUCATION</h3>
+            <div class="res-item">
+              <div class="res-item-head">
+                <strong>Bachelor of Technology (B.Tech) – Mechanical Engineering</strong>
+                <span class="res-item-date">Dec 2020 – Apr 2024</span>
+              </div>
+              <div>Lendi Institute of Engineering and Technology, Vizianagaram</div>
+              <div><strong>CGPA: 7.47 / 10.0</strong> — First Class with Distinction</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
 </body>
+
 </html>
